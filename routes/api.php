@@ -15,17 +15,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::get('/get-all-products', [ProductController::class, 'getAllProducts']);
-
-Route::middleware('auth:sanctum')->group(function(){
-Route::post('/add-product', [ProductController::class, 'addProduct']);
-Route::get('/get-one-product/{id}', [ProductController::class, 'getOneProduct']);
-Route::put('/update-product/{id}', [ProductController::class, 'updateProduct']);
-Route::delete('/delete-product/{id}', [ProductController::class, 'deleteProduct']);
-
-});
-
 // =============API of all Staff==================
 
 Route::get('/get-all-staff', [StaffController::class, 'getAllStaff']);
